@@ -135,6 +135,10 @@ function make_slides(f) {
 //        $("#multi_slider_table").append('<tr class="slider_row"><td class="slider_target" id="sentence0">' + "<font size='4'>" + sentence_left + "</font>" + '</td><td colspan="2"><div id="slider0" class="slider">-------[ ]--------</div></td><td class="slider_target" id="sentence1">' + "<font size='4'>" + sentence_right + "</font>" + '</td></tr>');
 //        utils.match_row_height("#multi_slider_table", ".slider_target");
 //      }
+
+    //Get the time as soon as the slide loads 
+      now = new Date().getTime() / 1000;
+
       //SLIDER LOAD STIMULI 
       $(".adj").html(stim.Adj);
       //var objects = _.shuffle(stim.Objects);
@@ -157,6 +161,7 @@ function make_slides(f) {
       for (var i = 0; i < multChoiceItems.length; i++){
         option = multChoiceItems[i];
         itemID = '.obj' + i;
+        radioID = 'critRadio' + i;
 
         if (option.startsWith("a") || option.startsWith("e") || option.startsWith("i") || option.startsWith("o") || option.startsWith("u")){
           last = 'An ' + option;
@@ -166,30 +171,36 @@ function make_slides(f) {
           last = 'A ' + option;
           $(itemID).html(last);
         }
+
+        document.getElementById(radioID).setAttribute('value',option);
+        console.log(document.getElementById(radioID).getAttribute('value'));
       }
 
       //LOADING IMAGES 
       var src = 'https://ciyang.github.io/imprecise-adjectives/images/';
 
       for (var j = 0; j < stim.Images.length;j++){
-        img = stim.Images[j];
-        src = 'https://ciyang.github.io/imprecise-adjectives/images/';
-        src+=img;
-        id = 'img' + j;
+        img = stim.Images[j]; //getting image URL extension
+        src = 'https://ciyang.github.io/imprecise-adjectives/images/'; //getting image URL beginning - constant through images
+        src+=img; //composing image URL in its entirety
+        id = 'img' + j; //getting image ID 
 
+        //Neutralizing image style before making the decision to add the dashed border
+        document.getElementById(id).setAttribute('style',"border:2px dashed transparent;");
+
+        //Loading image URL
+        document.getElementById(id).setAttribute('src',src);
+
+        //Making the decision about which photo to add the dashed border to 
         if (img.indexOf(stim.Noun)!= -1 && img.indexOf(stim.Color)!= -1){
           document.getElementById(id).setAttribute('style',"border:2px dashed #CCCCCC;");
-          document.getElementById(id).setAttribute('src',src);
-          console.log('image to be boxed');
+          console.log('image to be boxed: '+ id);
           console.log(img);
           console.log(id);
         }
-        else{
-          document.getElementById(id).setAttribute('src',src);
-          console.log('image to be unboxed');
-          console.log(img);
-          console.log(id);
-        }
+
+        console.log('the style of elt with id '  + id + ' is: ' + document.getElementById(id).getAttribute('style'));
+
       }
 
 
@@ -200,10 +211,18 @@ function make_slides(f) {
       //console.log(end-start);
       //this.stim = stim;
       //console.log(stim.Noun);
-      var checked_radio = $('input[name="shapeCheck"]:checked').val();
+      later = new Date().getTime() / 1000;
+
+      RT = later - now;
+      console.log('The time taken to complete this trial is: ' + RT);
+      var checked_radio = $('input[name="critShapeCheck"]:checked').val();
     	console.log(exp.sliderPost);
+      console.log(this.stim.Trial_item_ID);
+      console.log(checked_radio);
+      console.log(this.stim.Noun);
+      console.log(this.stim.Adj);
       // if VALUE == this.stim.CORRECTVALUE {}
-      if (exp.sliderPost != null) {
+      if (exp.sliderPost != null && checked_radio == this.stim.Noun) {
         this.log_responses();
         _stream.apply(this); //use exp.go() if and only if there is no "present" data.
       } else {
@@ -234,6 +253,7 @@ function make_slides(f) {
           "Images" : this.stim.Images,                    
           // "sense" : $('input[name="sense"]:checked').val(),        
           "slide_number" : exp.phase,
+          "response_time": RT,
           "block":"critical"
         });
     },
