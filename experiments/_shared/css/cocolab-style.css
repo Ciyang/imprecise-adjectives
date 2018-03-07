@@ -22,7 +22,7 @@ table {
     text-align: center;
 
     border: 1px solid #04abe3;
-    width: 800px;
+    width: 860px;
     height: 690px;
 
     /*could explicitly set the following, but these are the defaults for me (chrome, linux)*/

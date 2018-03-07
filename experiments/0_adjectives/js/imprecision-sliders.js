@@ -253,6 +253,7 @@ function make_slides(f) {
           "Images" : this.stim.Images,                    
           // "sense" : $('input[name="sense"]:checked').val(),        
           "slide_number" : exp.phase,
+          "displayID":this.stim.DisplayID,
           "response_time": RT,
           "block":"critical"
         });

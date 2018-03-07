@@ -81,7 +81,7 @@ function makeStims() {
 				"Adj":trials[i].Adj,
 				"Color":trials[i].Color,
 				"Images":ordered_images,
-				"DisplayID":i
+				"DisplayID":i+1
 			}
 			);
 		}
