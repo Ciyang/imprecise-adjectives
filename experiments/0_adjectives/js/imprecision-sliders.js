@@ -16,7 +16,7 @@ function make_slides(f) {
     name : "instructions1",
     start: function() {
       $(".instruction_condition").html("Between subject intruction manipulation: "+ exp.instruction);
-    }, 
+    },
     button : function() {
       exp.go(); //use exp.go() if and only if there is no "present" data.
     }
@@ -29,18 +29,18 @@ function make_slides(f) {
       $(".err1").hide();
       $(".err2").hide();
       $(".err3").hide();
-      this.init_sliders();      
+      this.init_sliders();
       exp.sliderPost = null;
       // $('input[name="sense"]:checked').attr('checked',false);
       this.stim = stim; //FRED: allows you to access stim in helpers
-      
+
       this.n_sliders = 1;
 //      $(".slider_row").remove();
 //      for (var i=0; i<this.n_sliders; i++) {
 //        var sentence_type_left = this.sentence_types[0];
-//        var sentence_type_left = this.sentence_types[1];        
+//        var sentence_type_left = this.sentence_types[1];
 //        var sentence_left = sentences[sentence_type_left];
-//        var sentence_right = sentences[sentence_type_right];        
+//        var sentence_right = sentences[sentence_type_right];
 //        $("#multi_slider_table").append('<tr class="slider_row"><td class="slider_target" id="sentence0">' + "<font size='4'>" + sentence_left + "</font>" + '</td><td colspan="2"><div id="slider0" class="slider">-------[ ]--------</div></td><td class="slider_target" id="sentence1">' + "<font size='4'>" + sentence_right + "</font>" + '</td></tr>');
 //        utils.match_row_height("#multi_slider_table", ".slider_target");
 //      }
@@ -81,14 +81,14 @@ function make_slides(f) {
         //this.log_responses();
         //_stream.apply(this); //use exp.go() if and only if there is no "present" data.
         console.log('correct set of answers')
-      } 
-      else 
+      }
+      else
       {
           console.log('incorrect set of answers');
           $(".err1").show();
           $('input[name="shapeCheck"]:checked').attr('checked',false);
       }*/
-        
+
     },
 
     init_sliders : function() {
@@ -106,8 +106,8 @@ function make_slides(f) {
     log_responses : function() {
         exp.data_trials.push({
           "slider_response" : exp.sliderPost,
-          "radio_response" : $('input[name="shapeCheck"]:checked').val(),          
-          // "sense" : $('input[name="sense"]:checked').val(),        
+          "radio_response" : $('input[name="shapeCheck"]:checked').val(),
+          // "sense" : $('input[name="sense"]:checked').val(),
           "slide_number" : exp.phase,
           "block":"example"
         });
@@ -120,7 +120,7 @@ function make_slides(f) {
     present_handle : function(stim) {
       $(".err").hide();
       this.init_sliders();
-      //start = Date.now();      
+      //start = Date.now();
       exp.sliderPost = null;
       // $('input[name="sense"]:checked').attr('checked',false);
       this.stim = stim; //FRED: allows you to access stim in helpers
@@ -129,21 +129,21 @@ function make_slides(f) {
 //      $(".slider_row").remove();
 //      for (var i=0; i<this.n_sliders; i++) {
 //        var sentence_type_left = this.sentence_types[0];
-//        var sentence_type_left = this.sentence_types[1];        
+//        var sentence_type_left = this.sentence_types[1];
 //        var sentence_left = sentences[sentence_type_left];
-//        var sentence_right = sentences[sentence_type_right];        
+//        var sentence_right = sentences[sentence_type_right];
 //        $("#multi_slider_table").append('<tr class="slider_row"><td class="slider_target" id="sentence0">' + "<font size='4'>" + sentence_left + "</font>" + '</td><td colspan="2"><div id="slider0" class="slider">-------[ ]--------</div></td><td class="slider_target" id="sentence1">' + "<font size='4'>" + sentence_right + "</font>" + '</td></tr>');
 //        utils.match_row_height("#multi_slider_table", ".slider_target");
 //      }
 
-    //Get the time as soon as the slide loads 
+    //Get the time as soon as the slide loads
       now = new Date().getTime() / 1000;
 
-      //SLIDER LOAD STIMULI 
+      //SLIDER LOAD STIMULI
       $(".adj").html(stim.Adj);
       //var objects = _.shuffle(stim.Objects);
 
-      //QUESTION 1: MULTIPLE CHOICE 
+      //QUESTION 1: MULTIPLE CHOICE
       var target = stim.Noun;
       var currDistractors = [];
       var allDistractors = ["arrow","circle","cloud","cube","cylinder","heart","line","oval","rectangle","spiral","square","star","sun","triangle"];
@@ -176,14 +176,14 @@ function make_slides(f) {
         console.log(document.getElementById(radioID).getAttribute('value'));
       }
 
-      //LOADING IMAGES 
+      //LOADING IMAGES
       var src = 'https://ciyang.github.io/imprecise-adjectives/images/';
 
       for (var j = 0; j < stim.Images.length;j++){
         img = stim.Images[j]; //getting image URL extension
         src = 'https://ciyang.github.io/imprecise-adjectives/images/'; //getting image URL beginning - constant through images
         src+=img; //composing image URL in its entirety
-        id = 'img' + j; //getting image ID 
+        id = 'img' + j; //getting image ID
 
         //Neutralizing image style before making the decision to add the dashed border
         document.getElementById(id).setAttribute('style',"border:2px dashed transparent;");
@@ -191,7 +191,7 @@ function make_slides(f) {
         //Loading image URL
         document.getElementById(id).setAttribute('src',src);
 
-        //Making the decision about which photo to add the dashed border to 
+        //Making the decision about which photo to add the dashed border to
         if (img.indexOf(stim.Noun)!= -1 && img.indexOf(stim.Color)!= -1){
           document.getElementById(id).setAttribute('style',"border:2px dashed #CCCCCC;");
           console.log('image to be boxed: '+ id);
@@ -222,7 +222,8 @@ function make_slides(f) {
       console.log(this.stim.Noun);
       console.log(this.stim.Adj);
       // if VALUE == this.stim.CORRECTVALUE {}
-      if (exp.sliderPost != null && checked_radio == this.stim.Noun) {
+      //  && checked_radio == this.stim.Noun
+      if (exp.sliderPost != null) {
         this.log_responses();
         _stream.apply(this); //use exp.go() if and only if there is no "present" data.
       } else {
@@ -246,12 +247,12 @@ function make_slides(f) {
     log_responses : function() {
         exp.data_trials.push({
           "slider_response" : exp.sliderPost,
-          "radio_response" : $('input[name="shapeCheck"]:checked').val(),
-          'trial/item_ID' : this.stim.Trial_item_ID,         
+          "radio_response" : $('input[name="critShapeCheck"]:checked').val(),
+          'trial/item_ID' : this.stim.Trial_item_ID,
           "condition" : this.stim.Condition,
           "adj" : this.stim.Adj,
-          "Images" : this.stim.Images,                    
-          // "sense" : $('input[name="sense"]:checked').val(),        
+          "Images" : this.stim.Images,
+          // "sense" : $('input[name="sense"]:checked').val(),
           "slide_number" : exp.phase,
           "displayID":this.stim.DisplayID,
           "response_time": RT,
@@ -310,7 +311,7 @@ function init() {
     };
   //blocks of the experiment:
   exp.structure=["i0", "instructions1",'example', 'multi_slider', 'subj_info', 'thanks'];
-  
+
   exp.data_trials = [];
   //make corresponding slides:
   exp.slides = make_slides(exp);
