@@ -6,29 +6,29 @@
     <!--JS-->
 
     <!-- external general utilities -->
-    <script src="../_shared/js/jquery-1.11.1.min.js "></script>
-    <script src="../_shared/full-projects/jquery-ui/jquery-ui.min.js"></script>
-    <script src="../_shared/js/underscore-min.js"></script>
+    <script src="../shared/js/jquery-1.11.1.min.js "></script>
+    <script src="../shared/full-projects/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../shared/js/underscore-min.js"></script>
     <!-- if you want to draw stuff: -->
-    <script src="../_shared/js/raphael-min.js"></script>
+    <script src="../shared/js/raphael-min.js"></script>
 
     <!-- cocolab experiment logic -->
-    <script src="../_shared/js/exp-V2.js"></script>
-    <script src="../_shared/js/stream-V2.js"></script>
+    <script src="../shared/js/exp-V2.js"></script>
+    <script src="../shared/js/stream-V2.js"></script>
 
     <!-- cocolab general utilities -->
-    <script src="../_shared/js/mmturkey.js "></script>
-    <script src="../_shared/js/browserCheck.js"></script>
-    <script src="../_shared/js/utils.js"></script>
+    <script src="../shared/js/mmturkey.js "></script>
+    <script src="../shared/js/browserCheck.js"></script>
+    <script src="../shared/js/utils.js"></script>
     <!-- if you want to draw cute creatures (depends on raphael): -->
-    <!-- <script src="../_shared/js/ecosystem.js"></script> -->
+    <!-- <script src="../shared/js/ecosystem.js"></script> -->
 
     <!-- experiment specific helper functions -->
     <!-- <script src="js/local-utils.js"></script> -->
 
     <!--CSS-->
-    <link href="../_shared/full-projects/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
-    <link href="../_shared/css/cocolab-style.css" rel="stylesheet" type="text/css"/>
+    <link href="../shared/full-projects/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../shared/css/cocolab-style.css" rel="stylesheet" type="text/css"/>
     <link href="css/local-style.css" rel="stylesheet" type="text/css"/>
 
     <!-- experiment file -->
@@ -36,7 +36,7 @@
     <script src="stimuli/corpus.js"></script>
     <script src="stimuli/names.js"></script>
 
-    <script> 
+    <script>
       var myimages=new Array("../expt-files/images/context1.1.png","../expt-files/images/context1.3.png","../expt-files/images/context1.3reg.png","../expt-files/images/context2.1.png","../expt-files/images/context2.3.png","../expt-files/images/context2.3reg.png","../expt-files/images/context3.1.png","../expt-files/images/context3.3.png","../expt-files/images/context3.3reg.png","../expt-files/images/context4.1.png","../expt-files/images/context4.3.png","../expt-files/images/context4.3reg.png","../expt-files/images/contextX.2.png")
       function preloadimages(){
         for (i=0;i<preloadimages.arguments.length;i++){
@@ -45,14 +45,14 @@
           }
           }
     </script>
-    
+
 </head>
 
 <body onload="init();">
   <noscript>This task requires JavaScript.</noscript>
 
   <div class="slide" id="i0" >
-    <img src="../_shared/images/alpslogo.png" alt="Stanford ALPS Lab" id="cocologo"></img>
+    <img src="../shared/images/alpslogo.png" alt="Stanford ALPS Lab" id="cocologo"></img>
     <p id="cocolab">Stanford ALPS Lab</p>
     <p id="instruct-text">This HIT involves playing an online game with another Turker. The task should take about six minutes. Please pay attention. Thanks!</p>
     <button id="start_button" type="button">Start Experiment</button>
@@ -96,12 +96,12 @@
 
         <ol>
           <li >What is the shape of the target object?<br />
-            <input type="radio" name="shapeCheck" value="square" />A square &nbsp; &nbsp; 
+            <input type="radio" name="shapeCheck" value="square" />A square &nbsp; &nbsp;
             <input type="radio" name="shapeCheck" value="wavyline" />A wavy line &nbsp; &nbsp; <br />
-            <input type="radio" name="shapeCheck" value="sun" />A sun &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp;  
+            <input type="radio" name="shapeCheck" value="sun" />A sun &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp;
             <input type="radio" name="shapeCheck" value="triangle" />A triangle  <br /><br />
           </li>
-          <li>To what extent do you agree with the following sentence?<br / > 
+          <li>To what extent do you agree with the following sentence?<br / >
               <span style = "font-size:1.2em;font-weight: bold;">"The target object is blue"</span><br />
               Please adjust the slider below.<br />
             <table id="multi_slider_table" class="slider_table" align = 'center'>
@@ -145,9 +145,9 @@
 
         <ol>
           <li>What is the shape of the target object?<br />
-            <input type="radio" name="critShapeCheck" id = 'critRadio0' value="square" /><span class = 'obj0'>{{}}</span> &nbsp; &nbsp; 
+            <input type="radio" name="critShapeCheck" id = 'critRadio0' value="square" /><span class = 'obj0'>{{}}</span> &nbsp; &nbsp;
             <input type="radio" name="critShapeCheck" id = 'critRadio1' value="wavyline" /><span class = 'obj1'>{{}}</span> &nbsp; &nbsp; <br />
-            <input type="radio" name="critShapeCheck" id = 'critRadio2' value="sun" /><span class = 'obj2'>{{}}</span> &nbsp; &nbsp;   
+            <input type="radio" name="critShapeCheck" id = 'critRadio2' value="sun" /><span class = 'obj2'>{{}}</span> &nbsp; &nbsp;
             <input type="radio" name="critShapeCheck" id = 'critRadio3' value="triangle" /><span class = 'obj3'>{{}}</span> <br /><br />
           </li>
           <li>To what extent do you agree with the following sentence?<br /> <br />
