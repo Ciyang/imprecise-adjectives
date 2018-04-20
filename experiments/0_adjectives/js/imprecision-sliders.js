@@ -178,7 +178,8 @@ function make_slides(f) {
 
       //LOADING IMAGES
       var src = 'https://ciyang.github.io/imprecise-adjectives/images/';
-
+      console.log(stim.Noun);
+      console.log(stim.Color);
       for (var j = 0; j < stim.Images.length;j++){
         img = stim.Images[j]; //getting image URL extension
         src = 'https://ciyang.github.io/imprecise-adjectives/images/'; //getting image URL beginning - constant through images
@@ -193,7 +194,7 @@ function make_slides(f) {
          "https://ciyang.github.io/imprecise-adjectives/images/non.jpg");
 
         document.getElementById(id).setAttribute('src',src);
-
+        console.log(img);
         //Making the decision about which photo to add the dashed border to
         if (img.indexOf(stim.Noun)!= -1 && img.indexOf(stim.Color)!= -1){
           document.getElementById(id).setAttribute('style',"border:2px dashed #CCCCCC;");
