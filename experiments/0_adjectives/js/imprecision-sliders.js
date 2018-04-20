@@ -189,6 +189,9 @@ function make_slides(f) {
         document.getElementById(id).setAttribute('style',"border:2px dashed transparent;");
 
         //Loading image URL
+        document.getElementById(id).setAttribute('src',
+         "https://ciyang.github.io/imprecise-adjectives/images/non.jpg");
+
         document.getElementById(id).setAttribute('src',src);
 
         //Making the decision about which photo to add the dashed border to
