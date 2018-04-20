@@ -122,7 +122,7 @@ function make_slides(f) {
       this.init_sliders();
       //start = Date.now();
       exp.sliderPost = null;
-      // $('input[name="sense"]:checked').attr('checked',false);
+      $('input[name="critShapeCheck"]:checked').attr('checked',false);
       this.stim = stim; //FRED: allows you to access stim in helpers
 
 		  this.n_sliders = 1;
@@ -223,12 +223,11 @@ function make_slides(f) {
       console.log(this.stim.Adj);
       // if VALUE == this.stim.CORRECTVALUE {}
       //  && checked_radio == this.stim.Noun
-      if (exp.sliderPost != null) {
+      if (exp.sliderPost != null && checked_radio != null) {
         this.log_responses();
         _stream.apply(this); //use exp.go() if and only if there is no "present" data.
       } else {
         $(".err").show();
-        $('input[name="shapeCheck"]:checked').attr('checked',false);
       }
     },
 
