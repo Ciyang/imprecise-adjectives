@@ -57,12 +57,12 @@
     <p id="cocolab">Stanford ALPS Lab
       <img src="../shared/images/alpslogo.png" alt="Stanford ALPS Lab" id="cocologo"></img>
     </p>
-    <p id="instruct-text">This HIT involves rating sentences that describe images. The task should take about 6 minutes.
-      You must be a native English speaker to participate. Thank you!</p>
-    <!-- <p style="font-family:courier; font-size:14px; text-align: justify;">Please note:
-      There will be multiple posted versions of this HIT throughout today and tomorrow.
-       You may work on only one HIT in this series. Thank you!</p>
-        (name: <strong>Language Study - Animals 12</strong>)  -->
+    <p id="instruct-text">This task involves rating sentences that describe images. It should take ~6 minutes.
+      You must be a native English speaker to participate. Please take <b>only 1</b> HIT, thanks!</p>
+      <!-- <p style="font-family:courier; font-size:14px; text-align: justify;">Please note:
+         There will be multiple posted versions of this HIT throughout today and tomorrow.
+          You may work on only one HIT in this series. Thank you!</p>
+           (name: <strong>Language Study - Animals 12</strong>)   -->
     <button id="start_button" type="button">Start Experiment</button>
     <p id = 'legal'>We invite you to participate in a research study on language production and comprehension. Your experimenter will ask you to do a linguistic task such as reading sentences or words, naming pictures or describing scenes, making up sentences of your own, or participating in a simple language game.
       There are no risks or benefits of any kind involved in this study. You will be paid for your participation at the posted rate.
@@ -176,7 +176,11 @@
   <div class="slide"  id="subj_info">
     <div class="long_form">
       <div class="subj_info_title">Additional information</div>
-      <p class="info">Answering these questions is optional, but will help us understand your answers.</p>
+      <p>Native Language: <input type="text" id="language"/></p>
+      <label>(the language(s) spoken at home when you were a child; <b>please answer truthfully
+        and your payment will NOT be affected</b>)</label>
+
+      <p class="info">Answering the questions below is optional, but will help us understand your answers.</p>
       <p>Did you read the instructions and do you think you did the HIT correctly?</p>
       <label><input type="radio"  name="assess" value="No"/>No</label>
       <label><input type="radio"  name="assess" value="Yes"/>Yes</label>
@@ -203,9 +207,6 @@
           <label><option value="4"/>Hold a higher degree</label>
         </select>
       </p>
-
-      <p>Native Language: <input type="text" id="language"/></p>
-      <label>(the language(s) spoken at home when you were a child)</label>
 
       <p>Did you enjoy the hit?</p>
       <select id="enjoyment">
