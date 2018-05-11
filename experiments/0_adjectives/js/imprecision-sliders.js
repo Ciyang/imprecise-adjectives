@@ -24,16 +24,13 @@ function make_slides(f) {
 
   slides.example = slide({
     name : "example",
-    present : _.shuffle(stimuli),
-    present_handle : function(stim) {
+    start : function() {
       $(".err1").hide();
       $(".err2").hide();
       $(".err3").hide();
       this.init_sliders();
       exp.sliderPost = null;
       // $('input[name="sense"]:checked').attr('checked',false);
-      this.stim = stim; //FRED: allows you to access stim in helpers
-
       this.n_sliders = 1;
 //      $(".slider_row").remove();
 //      for (var i=0; i<this.n_sliders; i++) {
@@ -301,6 +298,19 @@ function make_slides(f) {
 
 /// init ///
 function init() {
+
+  // unique turker
+  repeatWorker = false;
+  (function(){
+    var ut_id = "556241c3f1815a79480aad67adff5c91";  // remember to replace this!
+    if (UTWorkerLimitReached(ut_id)) {
+      $('.slide').empty();
+      repeatWorker = true;
+      alert("You have already completed the maximum number of HITs allowed by this requester. Please click 'Return HIT' to avoid any impact on your approval rating.");
+    }
+  })();
+  //
+
   exp.trials = [];
   exp.catch_trials = [];
   exp.instruction = _.sample(["instruction1","instruction2"]);

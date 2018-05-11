@@ -9,6 +9,8 @@
     <script src="../shared/js/jquery-1.11.1.min.js "></script>
     <script src="../shared/full-projects/jquery-ui/jquery-ui.min.js"></script>
     <script src="../shared/js/underscore-min.js"></script>
+    <script src="../shared/js/uniqueturker.js"></script>
+
     <!-- if you want to draw stuff: -->
     <script src="../shared/js/raphael-min.js"></script>
 
@@ -52,64 +54,74 @@
   <noscript>This task requires JavaScript.</noscript>
 
   <div class="slide" id="i0" >
-    <img src="../shared/images/alpslogo.png" alt="Stanford ALPS Lab" id="cocologo"></img>
-    <p id="cocolab">Stanford ALPS Lab</p>
-    <p id="instruct-text">This HIT involves playing an online game with another Turker. The task should take about six minutes. Please pay attention. Thanks!</p>
+    <p id="cocolab">Stanford ALPS Lab
+      <img src="../shared/images/alpslogo.png" alt="Stanford ALPS Lab" id="cocologo"></img>
+    </p>
+    <p id="instruct-text">This HIT involves rating sentences that describe images. The task should take about 6 minutes.
+      You must be a native English speaker to participate. Thank you!</p>
+    <!-- <p style="font-family:courier; font-size:14px; text-align: justify;">Please note:
+      There will be multiple posted versions of this HIT throughout today and tomorrow.
+       You may work on only one HIT in this series. Thank you!</p>
+        (name: <strong>Language Study - Animals 12</strong>)  -->
     <button id="start_button" type="button">Start Experiment</button>
-    <p id = 'legal'><b>Legal information</b>: We invite you to participate in a research study on language production and comprehension. Your experimenter will ask you to do a linguistic task such as reading sentences or words, naming pictures or describing scenes, making up sentences of your own, or participating in a simple language game.</p>
-    <p id = 'legal'>There are no risks or benefits of any kind involved in this study. </p>
-    <p id = 'legal'>You will be paid for your participation at the posted rate. </p>
-    <p id = 'legal'>If you have read this form and have decided to participate in this experiment, please understand your participation is voluntary and you have the right to withdraw your consent or discontinue participation at any time without penalty or loss of benefits to which you are otherwise entitled. You have the right to refuse to do particular tasks. Your individual privacy will be maintained in all published and written data resulting from the study. You may print this form for your records.</p>
-    <p id = 'contact'><b>Contact Information:</b> If you have any questions, concerns or complaints about this research study, its procedures, risks and benefits, you should contact the Protocol Director Penelope Eckert at (650)-725-1564</p>
-    <p id = 'contact'>If you are not satisfied with how this study is being conducted, or if you have any concerns, complaints, or general questions about the research or your rights as a participant, please contact the Stanford Institutional Review Board (IRB) to speak to someone independent of the research team at (650)-723-2480 or toll free at 1-866-680-2906. You can also write to the Stanford IRB, Stanford University, 3000 El Camino Real, Five Palo Alto Square, 4th Floor, Palo Alto, CA 94306 USA.</p>
-    <p id = 'contact'>If you agree to participate, please proceed to the study tasks.</p>
+    <p id = 'legal'>We invite you to participate in a research study on language production and comprehension. Your experimenter will ask you to do a linguistic task such as reading sentences or words, naming pictures or describing scenes, making up sentences of your own, or participating in a simple language game.
+      There are no risks or benefits of any kind involved in this study. You will be paid for your participation at the posted rate.
+      If you have read this form and have decided to participate in this experiment,
+      please understand your participation is voluntary and you have the right to withdraw your consent
+       or discontinue participation at any time without penalty or loss of benefits
+       to which you are otherwise entitled. You have the right to refuse
+        to do particular tasks.
+        Your individual privacy will be maintained in all published and written data resulting
+        from the study. You may print this form for your records.</p>
+    <p id = 'contact'><b>Contact</b> If you have any questions, concerns or complaints about this research study, its procedures, risks and benefits, you should contact the Protocol Director Penelope Eckert at (650)-725-1564.
+      If you are not satisfied with how this study is being conducted, or if you have any concerns, complaints, or general questions about the research or your rights as a participant, please contact the Stanford Institutional Review Board (IRB) to speak to someone independent of the research team at (650)-723-2480 or toll free at 1-866-680-2906. You can also write to the Stanford IRB, Stanford University, 3000 El Camino Real, Five Palo Alto Square, 4th Floor, Palo Alto, CA 94306 USA.</p>
+    <p>If you agree to participate, please proceed to the study tasks.</p>
   </div>
 
   <div class="slide" id="instructions1">
     <h3>Instructions</h3>
-    <p> You are playing an online game with another Turker. In each turn both of you will see four objects on your screens. Your task is to instruct the other player to click on the target object on his/her screen.</p>
+    <p> In each scene you will see four objects on the left,
+      one of which is surrounded by grey dashed lines
+       and it is called the target object.
+      Your task is to rate a sentence that describes the target object.</p>
+    <p>Please click on the "Continue" button below to see an example.</p>
     <!-- <p class="instruction_condition">{{}}</p> -->
     <button onclick="_s.button()">Continue</button>
   </div>
 
   <div class="slide" id="example">
     <h3>Example</h3>
-    <p>This is an example to familarize you with the task.</p>
-<!--    <div id="ex1" style="width:750px;margin-left:0px;margin-right:0px;"> -->
+    This is an example to familarize you with the task.<br />
+      <div style="width:420px;margin-left:0px;margin-top:0px;float:left;">
+        <p>The target object is surrounded by the grey dashed lines.</p>
 
-      <div style="width:450px;float:left;">
-        <p>The target object is surrounded by the grey dashed line.</p>
-
-        <img alt="Image Not Found" height="150px" width="150px" src="https://ciyang.github.io/imprecise-adjectives/images/striped_greensquare1.jpg" style="border:2px dashed transparent;" />
+        <img alt="Image Not Found" height="180px" width="180px" src="https://ciyang.github.io/imprecise-adjectives/images/striped_greensquare1.jpg" style="border:2px dashed transparent;" />
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <img alt="Image Not Found" height="150px" width="150px" src="https://ciyang.github.io/imprecise-adjectives/images/blue_sun.jpg" style="border:2px dashed #CCCCCC;" />
+        <img alt="Image Not Found" height="180px" width="180px" src="https://ciyang.github.io/imprecise-adjectives/images/blue_sun.jpg" style="border:2px dashed #CCCCCC;" />
 
         <br />
 
-        <img alt="Image Not Found" height="150px" width="150px" src="https://ciyang.github.io/imprecise-adjectives/images/open_redtriangle4.jpg" style="border:2px dashed transparent;" />
+        <img alt="Image Not Found" height="180px" width="180px" src="https://ciyang.github.io/imprecise-adjectives/images/open_redtriangle4.jpg" style="border:2px dashed transparent;" />
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <img alt="Image Not Found" height="150px" width="150px" src="https://ciyang.github.io/imprecise-adjectives/images/yellow_wavyline.jpg" style="border:2px dashed transparent;" />
+        <img alt="Image Not Found" height="180px" width="180px" src="https://ciyang.github.io/imprecise-adjectives/images/yellow_wavyline.jpg" style="border:2px dashed transparent;" />
 
       </div>
 
-      <div style="width:350px;float:left;margin-left:0px;"align = 'left'>
-
-        <ol>
-          <li >What is the shape of the target object?<br />
+      <div style="width:420px;float:right;margin-left:0px;margin-top:0px;"align = 'left'>
+      <p>1. What is the shape of the target object?<br />
             <input type="radio" name="shapeCheck" value="square" />A square &nbsp; &nbsp;
             <input type="radio" name="shapeCheck" value="wavyline" />A wavy line &nbsp; &nbsp; <br />
             <input type="radio" name="shapeCheck" value="sun" />A sun &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp;
-            <input type="radio" name="shapeCheck" value="triangle" />A triangle  <br /><br />
-          </li>
-          <li>To what extent do you agree with the following sentence?<br / >
-              <span style = "font-size:1.2em;font-weight: bold;">"The target object is blue"</span><br />
-              Please adjust the slider below.<br />
-            <table id="multi_slider_table" class="slider_table" align = 'center'>
+            <input type="radio" name="shapeCheck" value="triangle" />A triangle
+      </p>
+
+      <p>2. To what extent do you agree with the following sentence?</p>
+        <span style = "font-size:1.2em;font-weight: bold;">"The target object is blue"</span><br />
+        <br />Please adjust the slider below.<br />
+      <table id="multi_slider_table" class="slider_table" align = 'center'>
 <!--          <tr><td class="left">No, somebody must be wrong.</td><td class="right">Yes, it's a matter of opinion.</td></tr> -->
-              <tr><td>Completely disagree</td><td><div id="slider0" class="slider"></div></td><td>Completely agree</td></tr>
-            </table>
-          </li>
-        </ol>
+        <tr><td>Completely disagree</td><td><div id="slider0" class="slider"></div></td><td>Completely agree</td></tr>
+      </table>
 
         <p align = 'center'>When you are ready, please click on the "Continue" button below to start the experiment.</p>
         <div align= 'center'>
@@ -125,9 +137,8 @@
   <div class="slide" id="multi_slider">
 
 <!--    <div id="ex1" style="width:750px;margin-left:0px;margin-right:0px;"> -->
-
-      <div style="width:450px;float:left;">
-        <p>The target object is surrounded by the grey dashed line.</p>
+<div style="width:420px;margin-left:0px;margin-top:0px;float:left;">
+        <p>The target object is surrounded by the grey dashed lines.</p>
 
         <img alt="Image Not Found" height="180px" width="180px" src="https://ciyang.github.io/imprecise-adjectives/images/non.jpg" id = 'img0' style="border:2px dashed transparent;" />
         &nbsp;&nbsp;&nbsp;&nbsp;
@@ -141,30 +152,25 @@
 
       </div>
 
-      <div style="width:350px;float:left;margin-left:0px;">
-
-        <ol>
-          <li>What is the shape of the target object?<br />
+      <div style="width:420px;float:right;margin-left:0px;margin-top:0px;"align = 'left'>
+        <p>1. What is the shape of the target object?<br />
             <input type="radio" name="critShapeCheck" id = 'critRadio0' value="square" /><span class = 'obj0'>{{}}</span> &nbsp; &nbsp;
             <input type="radio" name="critShapeCheck" id = 'critRadio1' value="wavyline" /><span class = 'obj1'>{{}}</span> &nbsp; &nbsp; <br />
             <input type="radio" name="critShapeCheck" id = 'critRadio2' value="sun" /><span class = 'obj2'>{{}}</span> &nbsp; &nbsp;
-            <input type="radio" name="critShapeCheck" id = 'critRadio3' value="triangle" /><span class = 'obj3'>{{}}</span> <br /><br />
-          </li>
-          <li>To what extent do you agree with the following sentence?<br /> <br />
-              <span style = "font-size:1.2em;font-weight: bold;">"The target object is <span class = 'adj'>{{}}</span>"</span><br /><br />
-              Please adjust the slider below.<br />
+            <input type="radio" name="critShapeCheck" id = 'critRadio3' value="triangle" /><span class = 'obj3'>{{}}</span> <br />
+        </p>
+        <p>2. To what extent do you agree with the following sentence?</p>
+          <span style = "font-size:1.2em;font-weight: bold;">"The target object is <span class = 'adj'>{{}}</span>"</span><br /><br />
+              Please adjust the slider below.<br /><br />
             <table id="multi_slider_table" class="slider_table">
 <!--          <tr><td class="left">No, somebody must be wrong.</td><td class="right">Yes, it's a matter of opinion.</td></tr> -->
               <tr><td>Completely disagree</td><td><div id="slider1" class="slider"></div></td><td>Completely agree</td></tr>
             </table>
-          </li>
-        </ol>
 
-        <p>When you have answered all questions and adjusted all sliders, please click on the "Continue" button below.</p>
+        <p>When you have answered the question and adjusted the slider, please click on the "Continue" button below.</p>
         <button onclick="_s.button()">Continue</button>
-        <div class="err">Are you sure? Please re-read the instructions carefully and try again. Remember to answer all questions and adjust all the sliders before continuing!</div>
+        <div class="err">Remember to answer the question and adjust the slider before continuing!</div>
       </div>
-<!--    </div> -->
   </div>
 
   <div class="slide"  id="subj_info">
