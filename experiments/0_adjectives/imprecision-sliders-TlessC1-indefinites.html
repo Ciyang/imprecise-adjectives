@@ -1,0 +1,239 @@
+<html>
+
+<head>
+    <title>Imprecision adjectives extent agreement</title>
+
+    <!--JS-->
+
+    <!-- external general utilities -->
+    <script src="../shared/js/jquery-1.11.1.min.js "></script>
+    <script src="../shared/full-projects/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../shared/js/underscore-min.js"></script>
+    <script src="../shared/js/uniqueturker.js"></script>
+
+    <!-- if you want to draw stuff: -->
+    <script src="../shared/js/raphael-min.js"></script>
+
+    <!-- cocolab experiment logic -->
+    <script src="../shared/js/exp-V2.js"></script>
+    <script src="../shared/js/stream-V2.js"></script>
+
+    <!-- cocolab general utilities -->
+    <script src="../shared/js/mmturkey.js "></script>
+    <script src="../shared/js/browserCheck.js"></script>
+    <script src="../shared/js/utils.js"></script>
+    <!-- if you want to draw cute creatures (depends on raphael): -->
+    <!-- <script src="../shared/js/ecosystem.js"></script> -->
+
+    <!-- experiment specific helper functions -->
+    <!-- <script src="js/local-utils.js"></script> -->
+
+    <!--CSS-->
+    <link href="../shared/full-projects/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../shared/css/cocolab-style.css" rel="stylesheet" type="text/css"/>
+    <link href="css/local-style.css" rel="stylesheet" type="text/css"/>
+
+    <!-- experiment file -->
+    <script src="stimuli/corpus-TlessC1.js"></script>
+    <script src="js/imprecision-sliders.js"></script>
+    <script src="stimuli/names.js"></script>
+
+    <script>
+      var myimages=new Array("../expt-files/images/context1.1.png","../expt-files/images/context1.3.png","../expt-files/images/context1.3reg.png","../expt-files/images/context2.1.png","../expt-files/images/context2.3.png","../expt-files/images/context2.3reg.png","../expt-files/images/context3.1.png","../expt-files/images/context3.3.png","../expt-files/images/context3.3reg.png","../expt-files/images/context4.1.png","../expt-files/images/context4.3.png","../expt-files/images/context4.3reg.png","../expt-files/images/contextX.2.png")
+      function preloadimages(){
+        for (i=0;i<preloadimages.arguments.length;i++){
+          myimages[i]=new Image()
+          myimages[i].src=preloadimages.arguments[i]
+          }
+          }
+    </script>
+
+</head>
+
+<body onload="init();">
+  <noscript>This task requires JavaScript.</noscript>
+
+  <div class="slide" id="i0" >
+    <p id="cocolab">Stanford ALPS Lab
+      <img src="../shared/images/alpslogo.png" alt="Stanford ALPS Lab" id="cocologo"></img>
+    </p>
+    <p id="instruct-text">This task involves rating sentences that describe images. It should take ~6 minutes.
+      You must be a native English speaker to participate. Please take <b>only 1</b> HIT, thanks!</p>
+      <!-- <p style="font-family:courier; font-size:14px; text-align: justify;">Please note:
+         There will be multiple posted versions of this HIT throughout today and tomorrow.
+          You may work on only one HIT in this series. Thank you!</p>
+           (name: <strong>Language Study - Animals 12</strong>)   -->
+    <button id="start_button" type="button">Start Experiment</button>
+    <p id = 'legal'>We invite you to participate in a research study on language production and comprehension. Your experimenter will ask you to do a linguistic task such as reading sentences or words, naming pictures or describing scenes, making up sentences of your own, or participating in a simple language game.
+      There are no risks or benefits of any kind involved in this study. You will be paid for your participation at the posted rate.
+      If you have read this form and have decided to participate in this experiment,
+      please understand your participation is voluntary and you have the right to withdraw your consent
+       or discontinue participation at any time without penalty or loss of benefits
+       to which you are otherwise entitled. You have the right to refuse
+        to do particular tasks.
+        Your individual privacy will be maintained in all published and written data resulting
+        from the study. You may print this form for your records.</p>
+    <p id = 'contact'><b>Contact</b> If you have any questions, concerns or complaints about this research study, its procedures, risks and benefits, you should contact the Protocol Director Penelope Eckert at (650)-725-1564.
+      If you are not satisfied with how this study is being conducted, or if you have any concerns, complaints, or general questions about the research or your rights as a participant, please contact the Stanford Institutional Review Board (IRB) to speak to someone independent of the research team at (650)-723-2480 or toll free at 1-866-680-2906. You can also write to the Stanford IRB, Stanford University, 3000 El Camino Real, Five Palo Alto Square, 4th Floor, Palo Alto, CA 94306 USA.</p>
+    <p>If you agree to participate, please proceed to the study tasks.</p>
+  </div>
+
+  <div class="slide" id="instructions1">
+    <h3>Instructions</h3>
+    <p> In each scene you will see four objects on the left,
+      one of which is surrounded by grey dashed lines
+       and it is called the target object.
+      Your task is to rate a sentence that describes the target object.</p>
+    <p>Please click on the "Continue" button below to see an example.</p>
+    <!-- <p class="instruction_condition">{{}}</p> -->
+    <button onclick="_s.button()">Continue</button>
+  </div>
+
+  <div class="slide" id="example">
+    <h3>Example</h3>
+    This is an example to familarize you with the task.<br />
+      <div style="width:420px;margin-left:0px;margin-top:0px;float:left;">
+        <p>The target object is surrounded by the grey dashed lines.</p>
+
+        <img alt="Image Not Found" height="180px" width="180px" src="https://ciyang.github.io/imprecise-adjectives/images/striped_greensquare1.jpg" style="border:2px dashed transparent;" />
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <img alt="Image Not Found" height="180px" width="180px" src="https://ciyang.github.io/imprecise-adjectives/images/blue_sun.jpg" style="border:2px dashed #CCCCCC;" />
+
+        <br />
+
+        <img alt="Image Not Found" height="180px" width="180px" src="https://ciyang.github.io/imprecise-adjectives/images/open_redtriangle4.jpg" style="border:2px dashed transparent;" />
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <img alt="Image Not Found" height="180px" width="180px" src="https://ciyang.github.io/imprecise-adjectives/images/yellow_wavyline.jpg" style="border:2px dashed transparent;" />
+
+      </div>
+
+      <div style="width:420px;float:right;margin-left:0px;margin-top:0px;"align = 'left'>
+      <p>1. What is the shape of the target object?<br />
+            <input type="radio" name="shapeCheck" value="square" />A square &nbsp; &nbsp;
+            <input type="radio" name="shapeCheck" value="wavyline" />A wavy line &nbsp; &nbsp; <br />
+            <input type="radio" name="shapeCheck" value="sun" />A sun &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp;
+            <input type="radio" name="shapeCheck" value="triangle" />A triangle
+      </p>
+
+      <p>2. To what extent do you agree with the following sentence?</p>
+        <span style = "font-size:1.2em;font-weight: bold;">"The target object is blue"</span><br />
+        <br />Please adjust the slider below.<br />
+      <table id="multi_slider_table" class="slider_table" align = 'center'>
+<!--          <tr><td class="left">No, somebody must be wrong.</td><td class="right">Yes, it's a matter of opinion.</td></tr> -->
+        <tr><td>Completely disagree</td><td><div id="slider0" class="slider"></div></td><td>Completely agree</td></tr>
+      </table>
+
+        <p align = 'center'>When you are ready, please click on the "Continue" button below to start the experiment.</p>
+        <div align= 'center'>
+          <button onclick="_s.button()">Continue</button>
+        </div>
+        <div class="err1">Are you sure? Please re-read the instructions and try again.</div>
+        <div class="err2">Please adjust all the sliders before continuing.</div>
+        <div class="err3">Please answer all questions before continuing.</div>
+      </div>
+<!--    </div> -->
+  </div>
+
+  <div class="slide" id="multi_slider">
+
+<!--    <div id="ex1" style="width:750px;margin-left:0px;margin-right:0px;"> -->
+<div style="width:420px;margin-left:0px;margin-top:0px;float:left;">
+        <p>The target object is surrounded by the grey dashed lines.</p>
+
+        <img alt="Image Not Found" height="180px" width="180px" src="https://ciyang.github.io/imprecise-adjectives/images/non.jpg" id = 'img0' style="border:2px dashed transparent;" />
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <img alt="Image Not Found" height="180px" width="180px" src="https://ciyang.github.io/imprecise-adjectives/images/non.jpg" id = 'img1' style="border:2px dashed transparent;" />
+
+        <br />
+
+        <img alt="Image Not Found" height="180px" width="180px" src="https://ciyang.github.io/imprecise-adjectives/images/non.jpg" id = 'img2' style="border:2px dashed transparent;" />
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <img alt="Image Not Found" height="180px" width="180px" src="https://ciyang.github.io/imprecise-adjectives/images/non.jpg" id = 'img3' style="border:2px dashed transparent;" />
+
+      </div>
+
+      <div style="width:420px;float:right;margin-left:0px;margin-top:0px;"align = 'left'>
+        <p>1. What is the shape of the target object?<br />
+            <input type="radio" name="critShapeCheck" id = 'critRadio0' value="square" /><span class = 'obj0'>{{}}</span> &nbsp; &nbsp;
+            <input type="radio" name="critShapeCheck" id = 'critRadio1' value="wavyline" /><span class = 'obj1'>{{}}</span> &nbsp; &nbsp; <br />
+            <input type="radio" name="critShapeCheck" id = 'critRadio2' value="sun" /><span class = 'obj2'>{{}}</span> &nbsp; &nbsp;
+            <input type="radio" name="critShapeCheck" id = 'critRadio3' value="triangle" /><span class = 'obj3'>{{}}</span> <br />
+        </p>
+        <p>2. To what extent do you agree with the following sentence?</p>
+          <span style = "font-size:1.2em;font-weight: bold;">"The target object is <span class = 'adj'>{{}}</span>"</span><br /><br />
+              Please adjust the slider below.<br /><br />
+            <table id="multi_slider_table" class="slider_table">
+<!--          <tr><td class="left">No, somebody must be wrong.</td><td class="right">Yes, it's a matter of opinion.</td></tr> -->
+              <tr><td>Completely disagree</td><td><div id="slider1" class="slider"></div></td><td>Completely agree</td></tr>
+            </table>
+
+        <p>When you have answered the question and adjusted the slider, please click on the "Continue" button below.</p>
+        <button onclick="_s.button()">Continue</button>
+        <div class="err">Remember to answer the question and adjust the slider before continuing!</div>
+      </div>
+  </div>
+
+  <div class="slide"  id="subj_info">
+    <div class="long_form">
+      <div class="subj_info_title">Additional information</div>
+      <p>Native Language: <input type="text" id="language"/></p>
+      <label>(the language(s) spoken at home when you were a child; <b>please answer truthfully
+        and your payment will NOT be affected</b>)</label>
+
+      <p class="info">Answering the questions below is optional, but will help us understand your answers.</p>
+      <p>Did you read the instructions and do you think you did the HIT correctly?</p>
+      <label><input type="radio"  name="assess" value="No"/>No</label>
+      <label><input type="radio"  name="assess" value="Yes"/>Yes</label>
+      <label><input type="radio"  name="assess" value="Confused"/>I was confused</label>
+
+      <p>Gender:
+        <select id="gender">
+          <label><option value=""/></label>
+          <label><option value="Male"/>Male</label>
+          <label><option value="Female"/>Female</label>
+          <label><option value="Other"/>Other</label>
+        </select>
+      </p>
+
+      <p>Age: <input type="text" id="age"/></p>
+
+      <p>Level Of Education:
+        <select id="education">
+          <label><option value="-1"/></label>
+          <label><option value="0"/>Some High School</label>
+          <label><option value="1"/>Graduated High School</label>
+          <label><option value="2"/>Some College</label>
+          <label><option value="3"/>Graduated College</label>
+          <label><option value="4"/>Hold a higher degree</label>
+        </select>
+      </p>
+
+      <p>Did you enjoy the hit?</p>
+      <select id="enjoyment">
+        <label><option value="-1"></option></label>
+        <label><option value="0">Worse than the Average HIT</option></label>
+        <label><option value="1" >An Average HIT</option></label>
+        <label><option value="2">Better than average HIT</option></label>
+      </select>
+
+      <p>We would be interested in any comments you have about this experiment. Please type them here:</p>
+      <textarea id="comments" rows="3" cols="50"></textarea>
+      <br/>
+      <button onclick="_s.submit()">Submit</button>
+    </div>
+  </div>
+
+  <div id="thanks" class="slide js" >
+    <p  class="big">Thanks for your time!</p>
+  </div>
+
+  <div class="progress">
+    <span>Progress:</span>
+    <div class="bar-wrapper">
+      <div class="bar" width="0%">
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
