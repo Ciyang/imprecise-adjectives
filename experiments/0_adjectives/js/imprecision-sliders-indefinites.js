@@ -137,7 +137,15 @@ function make_slides(f) {
       now = new Date().getTime() / 1000;
 
       //SLIDER LOAD STIMULI
+      if ((stim.Adj).startsWith("a") || (stim.Adj).startsWith("e") || (stim.Adj).startsWith("i") || (stim.Adj).startsWith("o") || (stim.Adj).startsWith("u")){
+        $(".article").html("an");
+      }
+      else{
+        $(".article").html("a");
+      }
       $(".adj").html(stim.Adj);
+      $(".noun").html(stim.Noun);
+
       //var objects = _.shuffle(stim.Objects);
 
       //QUESTION 1: MULTIPLE CHOICE
@@ -193,7 +201,7 @@ function make_slides(f) {
         document.getElementById(id).setAttribute('src',src);
         console.log(img);
         //Making the decision about which photo to add the dashed border to
-        if (img.indexOf(stim.Noun)!= -1 && img.indexOf(stim.Color)!= -1){ 
+        if (img.indexOf(stim.Noun)!= -1 && img.indexOf(stim.Color)!= -1){
           document.getElementById(id).setAttribute('style',"border:2px dashed #CCCCCC;");
           console.log('image to be boxed: '+ id);
           console.log(img);

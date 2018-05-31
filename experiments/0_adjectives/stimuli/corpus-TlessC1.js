@@ -20,7 +20,7 @@ var trials = _.shuffle([
 		{"Trial_item_ID":"12", "Condition":"NoContrast","Noun":"circle","Adj":"closed","Color":"green","Images":["open_greencircle2.jpg", "open_bluesquare1.jpg", "bumpy_redline.jpg", "yellow_wavyline.jpg"]},
 		{"Trial_item_ID":"13", "Condition":"Contrast","Noun":"line","Adj":"straight","Color":"blue","Images":["curved_blueline2.jpg", "curved_greenarrow1.jpg", "spotted_yellowcircle4.jpg", "curved_redline5.jpg"]},
 		{"Trial_item_ID":"14", "Condition":"NoContrast","Noun":"cube","Adj":"full","Color":"yellow","Images":["full_yellowcube6.jpg", "full_redcylinder7.jpg", "diagonal_bluearrow.jpg", "tall_greenspiral2.jpg"]},
-		{"Trial_item_ID":"15", "Condition":"Contrast","Noun":"cube","Adj":"empty","Color":"blue","Images":["full_bluecube1.jpg", "empty_transparentcylinder.jpg", "curved_greenline4.jpg", "full_bluecube5.jpg"]},
+		{"Trial_item_ID":"15", "Condition":"Contrast","Noun":"cube","Adj":"empty","Color":"blue","Images":["full_bluecube1.jpg", "empty_transparentcylinder.jpg", "curved_greenline4.jpg", "full_contrastcube5.jpg"]},
 		{"Trial_item_ID":"16", "Condition":"NoContrast","Noun":"triangle","Adj":"flat","Color":"yellow","Images":["bumpy_yellowtriangle2.jpg", "bumpy_bluesquare1.jpg", "green_sphere.jpg", "tall_redspiral7.jpg"]},
 		{"Trial_item_ID":"17", "Condition":"Contrast","Noun":"circle","Adj":"closed","Color":"blue","Images":["open_bluecircle2.jpg", "open_yellowtriangle1.jpg", "long_redline7.jpg", "open_greencircle5.jpg"]},
 		{"Trial_item_ID":"18", "Condition":"NoContrast","Noun":"line","Adj":"straight","Color":"red","Images":["bent_redline2.jpg", "bent_greenarrow1.jpg", "chereos_yellowoval.jpg", "full_bluecylinder7.jpg"]},
